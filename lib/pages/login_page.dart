@@ -7,7 +7,9 @@ class LoginPage extends StatelessWidget {
   final TextEditingController _pwController = TextEditingController();
   LoginPage({super.key});
 
-  void login() {}
+  void login() {
+    String min = "Min Khant Kyaw";
+  }
 
   @override
   Widget build(BuildContext context) {
