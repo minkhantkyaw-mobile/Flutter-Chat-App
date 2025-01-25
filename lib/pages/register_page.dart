@@ -2,17 +2,16 @@ import 'package:chat_app_firebase/components/my_button.dart';
 import 'package:chat_app_firebase/components/my_textfield.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
+  final TextEditingController _confirmPwController = TextEditingController();
 
-  //tap to go to register page
   final void Function()? onTap;
-  LoginPage({super.key, required this.onTap});
 
-  void login() {
-    String min = "Min Khant Kyaw";
-  }
+  RegisterPage({super.key, required this.onTap});
+
+  void register() {}
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class LoginPage extends StatelessWidget {
               height: 30,
             ),
             Text(
-              "Welcome back, you've been missed!",
+              "Let's create an account for you!",
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
@@ -54,11 +53,19 @@ class LoginPage extends StatelessWidget {
               controller: _pwController,
             ),
             SizedBox(
+              height: 10,
+            ),
+            MyTextfield(
+              hintText: "Confirm Password",
+              obscureText: true,
+              controller: _confirmPwController,
+            ),
+            SizedBox(
               height: 20,
             ),
             MyButton(
-              text: "Login",
-              onTap: login,
+              text: "Register",
+              onTap: register,
             ),
 
             SizedBox(
@@ -69,14 +76,14 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Not a member?",
+                  "Already have an Account?",
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
                 GestureDetector(
                   onTap: onTap,
                   child: Text(
-                    "Register Now",
+                    "Logins Now",
                     style:
                         TextStyle(color: Theme.of(context).colorScheme.primary),
                   ),
